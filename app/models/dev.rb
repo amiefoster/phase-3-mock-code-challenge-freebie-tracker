@@ -15,7 +15,7 @@ class Dev < ActiveRecord::Base
     end
 
     def give_away provided_dev_obj, provided_freebie_obj
-        provided_freebie_obj.update("dev_id = #{provided_dev_obj.id}'")
+        provided_freebie_obj.update({dev_id: provided_dev_obj.id})
         provided_freebie_obj.save
     end
 end
